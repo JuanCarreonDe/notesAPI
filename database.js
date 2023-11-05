@@ -14,8 +14,9 @@ const pool = mysql
 
 export async function getNotesForUser(idUser) {
   const [row] = await pool.query(`CALL getNotesForUser(?);`, [idUser]);
-  console.log(row);
-  return row;
+  const notes = row[0];
+  console.log(notes);
+  return notes;
 }
 
 export async function createNote(title, description, idUser) {
