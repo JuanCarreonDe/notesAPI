@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cors(corsOption))
 
 
-app.listen(8080, ()=> console.log("server run on port 8080"))
+app.listen(process.env.PORT, ()=> console.log("server run on port 8080"))
 
 app.get("/notes/:idUser", async(req, res) =>{
     const idUser = req.params.idUser
